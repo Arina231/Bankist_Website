@@ -55,4 +55,4 @@ message.style.width = '120%';
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 
- 
+///Attributes////

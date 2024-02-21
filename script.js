@@ -61,3 +61,6 @@ console.log(logo.alt);
 console.log(logo.getAttribute('.designer'));
 logo.setAttribute('company', 'Bankist');
 console.log(logo.getAttribute('src'));
+
+//data Attribute
+console.log(logo.dataset.versionNumber);

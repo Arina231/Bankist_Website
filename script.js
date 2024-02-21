@@ -60,3 +60,4 @@ const logo = document.querySelector('.nav__logo');
 console.log(logo.alt);
 console.log(logo.getAttribute('.designer'));
 logo.setAttribute('company', 'Bankist');
+console.log(logo.getAttribute('src'));

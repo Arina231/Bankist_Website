@@ -65,3 +65,29 @@ document.addEventListener('keydown', function (e) {
 // //data Attribute
 // console.log(logo.dataset.versionNumber);
 
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coord = section1.getBoundingClientRect();
+  console.log(s1coord);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+  ///Scrolling Old MOdel
+  // window.scrollTo(
+  //   s1coord.left + window.pageXOffset,
+  //   s1coord.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coord.left + window.pageXOffset,
+  //   top: s1coord.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  ///scroll modern way
+  section1.scrollIntoView({ behavior: 'smooth' });
+});

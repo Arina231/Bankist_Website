@@ -1,13 +1,14 @@
 'use strict';
 
-///////////////////////////////////////
-// Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
-// test comment
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+///////////////////////////////////////
+// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -29,6 +30,57 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+////Scrolling///
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coord = section1.getBoundingClientRect();
+  console.log(s1coord);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+
+  console.log(
+    'height/width viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  ///Scrolling Old MOdel
+  // window.scrollTo(
+  //   s1coord.left + window.pageXOffset,
+  //   s1coord.top + window.pageYOffset
+  // );
+
+  // window.scrollTo({
+  //   left: s1coord.left + window.pageXOffset,
+  //   top: s1coord.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  ///scroll modern way
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+/////////PAge NAViGATION//////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const header = document.querySelector('.header');
 // ///creating elements
 // const message = document.createElement('div');
@@ -65,29 +117,15 @@ document.addEventListener('keydown', function (e) {
 // //data Attribute
 // console.log(logo.dataset.versionNumber);
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1');
+// const h1 = document.querySelector('h1');
 
-btnScrollTo.addEventListener('click', function (e) {
-  const s1coord = section1.getBoundingClientRect();
-  console.log(s1coord);
+// const alertH1 = function (e) {
+//   alert('onmouseenter: Great now you are reading the heading');
+// };
 
-  console.log(e.target.getBoundingClientRect());
+// h1.addEventListener('mouseenter', alertH1);
+// setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 
-  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
-
-  ///Scrolling Old MOdel
-  // window.scrollTo(
-  //   s1coord.left + window.pageXOffset,
-  //   s1coord.top + window.pageYOffset
-  // );
-
-  // window.scrollTo({
-  //   left: s1coord.left + window.pageXOffset,
-  //   top: s1coord.top + window.pageYOffset,
-  //   behavior: 'smooth',
-  // });
-
-  ///scroll modern way
-  section1.scrollIntoView({ behavior: 'smooth' });
-});
+// h1.onmouseenter = function (e) {
+//   alert('onmouseenter: Great now you are reading the heading');
+// };

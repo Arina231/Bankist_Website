@@ -142,6 +142,8 @@ window.addEventListener('scroll', function () {
   else nav.classList.add('sticky');
 });
 
+///sticky navigation: Intersection Observer API
+
 // const header = document.querySelector('.header');
 // ///creating elements
 // const message = document.createElement('div');
